@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const usernameInput = document.getElementById('username');
     const targetInput = document.getElementById('targetInput');
     const targetCards = document.querySelectorAll('.target-card');
@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         timeIndicator.textContent = timeType;
-        return { timeType, greeting };
+        return {
+            timeType,
+            greeting
+        };
     }
 
     // Update time initially
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle target selection
     targetCards.forEach(card => {
-        card.addEventListener('click', function () {
+        card.addEventListener('click', function() {
             targetCards.forEach(c => c.classList.remove('selected', 'ring-2', 'ring-whatsapp-500'));
             this.classList.add('selected', 'ring-2', 'ring-whatsapp-500');
             selectedTarget = parseInt(this.dataset.target);
@@ -77,10 +80,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Generate message
-    generateBtn.addEventListener('click', function () {
+    generateBtn.addEventListener('click', function() {
         const username = usernameInput.value.trim();
         const achieved = parseInt(targetInput.value) || 0;
-        const { timeType, greeting } = updateTimeIndicator();
+        const {
+            timeType,
+            greeting
+        } = updateTimeIndicator();
         const currentDate = getCurrentDate();
 
         // Validation
@@ -90,11 +96,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        if (achieved === 0) {
+        if (targetInput.value.trim() === '' || isNaN(achieved)) {
             alert('Silakan masukkan target yang sudah dicapai!');
             targetInput.focus();
             return;
         }
+
 
         if (!selectedTarget) {
             alert('Silakan pilih target harian!');
@@ -141,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Copy message
-    copyBtn.addEventListener('click', function () {
+    copyBtn.addEventListener('click', function() {
         const textToCopy = preview.textContent;
 
         if (!textToCopy || textToCopy.includes('@username')) {
