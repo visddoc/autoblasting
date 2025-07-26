@@ -123,7 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
         message += `⚠️ *Kekurangan*: ${difference} unit\n\n`;
         message += `Terus semangat! Anda masih memiliki waktu untuk mencapai target harian.\n\n`;
         message += `Terima kasih atas kerja kerasnya. Semoga hari Anda produktif!\n\n`;
-        message += `_Pesan ini hanya pengingat. Mohon abaikan jika target sudah tercapai._`;
+        message += `_Pesan ini hanya pengingat tidak di paksakan anda untuk capai target. Mohon abaikan jika target sudah tercapai._`;
+        message += `_Pesan ini hanya pengingat tidak di paksakan anda untuk capai target. Mohon abaikan jika target sudah tercapai._`;
 
         // Display preview
         preview.textContent = message;
